@@ -84,11 +84,14 @@ namespace Tree
 		{
 			foreach (var node in this)
 			{
-			    if (node.Key == key)
-			    {
-			        yield return node;
-			    }
+				if (node.Key == key)
+				{
+					yield return node;
+					yield break;
+				}
 			}
+			Console.WriteLine("not found");
+			yield break;
 		}
 		public IEnumerator<Node> GetEnumerator()
 		{
